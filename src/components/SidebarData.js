@@ -2,6 +2,7 @@ import React from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
+import { BiMoviePlay } from "react-icons/bi";
 
 export const SidebarData = [
   {
@@ -11,21 +12,9 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Chat",
-    path: "/chat",
-    icon: <IoIcons.IoMdChatbubbles />,
-    cName: "nav-text",
-  },
-  {
-    title: "Tips",
-    path: "/tips",
-    icon: <FaIcons.FaLightbulb />,
-    cName: "nav-text",
-  },
-  {
-    title: "Support",
-    path: "/support",
-    icon: <IoIcons.IoMdHelpCircle />,
+    title: "Movies",
+    path: "/movies",
+    icon: <BiMoviePlay />,
     cName: "nav-text",
   },
 ];

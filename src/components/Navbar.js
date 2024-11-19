@@ -8,27 +8,14 @@ import { SidebarData } from "./SidebarData";
 import "../App.css";
 import { IconContext } from "react-icons/lib";
 import * as IoIcons from "react-icons/io";
-import { getAuth, signOut } from "firebase/auth";
-import SignIn from "../components/SignIn";
 
-function Navbar({ user }) {
+function Navbar() {
   // State to track sidebar visibility, default is hidden (false)
   const [sidebar, setSidebar] = useState(false);
   const sidebarRef = useRef(null); // Ref for sidebar
 
   // Toggle function to show or hide the sidebar
   const showSidebar = () => setSidebar(!sidebar);
-  const auth = getAuth();
-
-  // Logout function
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      console.log("User signed out successfully");
-    } catch (error) {
-      console.error("Error signing out: ", error);
-    }
-  };
 
   // Effect to handle clicks outside of the sidebar
   useEffect(() => {
@@ -57,14 +44,6 @@ function Navbar({ user }) {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars color="white" onClick={showSidebar} />
           </Link>
-          {user ? (
-            <div className="logOut" onClick={handleLogout}>
-              <span>Log out</span>
-              <IoIcons.IoIosLogOut />
-            </div>
-          ) : (
-            <SignIn />
-          )}
         </div>
 
         {/* Sidebar navigation menu */}

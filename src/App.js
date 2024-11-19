@@ -24,7 +24,7 @@ function App() {
   }, [auth]);
   return (
     <>
-      <Navbar user={user} /> {/* Navbar displayed on all pages */}
+      <Navbar /> {/* Navbar displayed on all pages */}
       <Outlet context={{ user }} /> {/* This renders child routes */}
     </>
   );
